@@ -3,7 +3,7 @@ name = "val-attack"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = "~=3.9"
 dependencies = [
     "matplotlib~=3.5.1",
     "nltk~=3.6.7",
