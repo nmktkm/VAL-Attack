@@ -36,7 +36,7 @@ There are a number of files:
 ## Installation
 Clone this repository.
 ```
-$ git clone git@github.com:nmktkm/VAL-Attack.git
+$ git clone https://github.com/nmktkm/VAL-Attack.git
 ```
 
 Install packages.
