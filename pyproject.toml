@@ -3,13 +3,14 @@ name = "val-attack"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = "~=3.9"
+requires-python = ">=3.9"
 dependencies = [
-    "matplotlib~=3.5.1",
-    "nltk~=3.6.7",
-    "numpy~=1.22.2",
-    "pandas~=1.4.0",
-    "tqdm~=4.62.3",
+    "matplotlib>=3.9.4",
+    "nltk>=3.9.1",
+    "numpy>=2.0.2",
+    "pandas>=2.3.1",
+    "torch>=2.8.0",
+    "tqdm>=4.67.1",
 ]
 
 [dependency-groups]
