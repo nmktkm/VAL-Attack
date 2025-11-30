@@ -54,9 +54,9 @@ def applyVolumeHiding(file_dictionary):
 
 
 maildir = {
-    'enron': 'C:/Users/Steven/Documents/git/SSE_attacks/keyword_generation/maildir',
+    'enron': './maildir',
     'lucene': 'C:/Users/Steven/Documents/git/SSE_attacks/keyword_generation/apache_ml',
-    'wiki': 'C:/Users/Steven/Documents/git/SSE_attacks/keyword_generation/wiki_plaintext'
+    'wiki': './file_extraction/wiki3000'
 }
 
 countermeasures = {
@@ -67,7 +67,7 @@ countermeasures = {
 
 if __name__ == '__main__':
     # The number of keywords
-    nr_keywords = 5000
+    nr_keywords = None
     # Automate the runs for each leakage percentage
     percentages_leaked = [0.1, 0.5, 1, 5, 10, 30]
 
