@@ -1,11 +1,12 @@
 import bz2
+import json
 from io import BufferedReader
 from pathlib import Path
 import re
 import xml.etree.ElementTree as ETree
 
 INF = 1<<30
-EXTRACT_FILES = 30000
+EXTRACT_FILES = 3000
 
 def main():
     with Path("./block_list.txt").open("r") as f:
@@ -52,6 +53,7 @@ def extract_page_texts(xml: str, indicies: list[int], limit: int = INF) -> int:
             break
 
         page = root.find(f"page/[id='{idx}']")
+        title = page.find("title").text
         text = page.find("revision/text").text
 
         # データが空 or REDIRECTの場合はスキップ
@@ -59,8 +61,13 @@ def extract_page_texts(xml: str, indicies: list[int], limit: int = INF) -> int:
         if text is None or stop_pattern.match(text) is not None:
             continue
 
-        with Path(f"wiki_dataset/wiki_{str(idx).zfill(5)}.txt").open("w") as f:
-            f.write(text)
+        with Path(f"wiki3000/wiki_{str(idx).zfill(5)}.json").open("w") as f:
+            content = {
+                "id": str(idx),
+                "title": title,
+                "text": text
+            }
+            json.dump(content, f)
             extracted_cnt += 1
 
     return extracted_cnt
